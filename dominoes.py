@@ -173,6 +173,8 @@ current_player = None
 pieces = {"stock": [], "computer": [], "player": [], "snake": []}
 ai_scoreboard = None
 
+# determine which player is giving first piece
+
 while current_player is None:
     pieces["stock"] = make_stock()
     pieces["computer"] = give_hand()
@@ -190,6 +192,8 @@ while current_player is None:
             set_starting(index_player, "player")
         else:
             set_starting(index_computer, "computer")
+
+# main loop
 
 while True:
     swap_current_player()
@@ -211,6 +215,8 @@ while True:
         input()
     else:
         print("Status: It's your turn to make a move. Enter your command.")
+
+    # handle command
 
     while True:
         if current_player == "player":
